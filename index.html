@@ -3,10 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
+    <style>
+        :root {
+            --navy: #172554;
+            --blue: #2563eb;
+            --blue-dark: #1d4ed8;
+            --text: #172033;
+            --muted: #64748b;
+            --border: #dbe4f0;
+            --surface: #ffffff;
+            --background: #eef4ff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #e0ecff, var(--background));
+        }
+
+        .login-card {
+            width: min(100%, 430px);
+            padding: 42px 38px;
+            background: var(--surface);
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(23, 37, 84, .14);
+        }
+
+        .brand {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 24px;
+            border-radius: 14px;
+            color: white;
+            background: var(--blue);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        h1 { margin: 0 0 8px; color: var(--navy); font-size: 30px; }
+        .intro { margin: 0 0 28px; color: var(--muted); }
+        label { display: block; margin: 18px 0 8px; font-size: 14px; font-weight: 700; }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--text);
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, .14); }
+        .options { display: flex; justify-content: space-between; align-items: center; margin: 18px 0 24px; font-size: 13px; }
+        .remember { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+        .remember input { width: auto; accent-color: var(--blue); }
+        a { color: var(--blue); font-weight: 700; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: 0;
+            border-radius: 9px;
+            color: white;
+            background: var(--blue);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover { background: var(--blue-dark); }
+        .signup { margin: 25px 0 0; color: var(--muted); text-align: center; font-size: 14px; }
+    </style>
 </head>
 <body>
-    <h1>Hello world<h1>
+    <main class="login-card">
+        <div class="brand" aria-hidden="true">L</div>
+        <h1>Welcome back</h1>
+        <p class="intro">Sign in to continue to your account.</p>
+
+        <form action="#" method="post">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+
+            <div class="options">
+                <label class="remember"><input type="checkbox" name="remember"> Remember me</label>
+                <a href="#forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit">Sign in</button>
+        </form>
+        <p class="signup">Don't have an account? <a href="#sign-up">Create one</a></p>
+    </main>
 
 </body>
 </html>
